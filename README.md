@@ -786,5 +786,22 @@
             showYear(1); // Inicia no Ano 1
         });
     </script>
+    
 </body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('Service Worker registrado com sucesso:', registration.scope);
+            })
+            .catch(err => {
+              console.log('Falha ao registrar Service Worker:', err);
+            });
+        });
+      }
+    </script>
+</body>
+</html>
+
 </html>
